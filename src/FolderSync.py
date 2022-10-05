@@ -451,7 +451,8 @@ def main():
             end = time.time() - start
             
             print('Next sync in ' + str(interval - end) + ' seconds.')
-            time.sleep(interval - end)
+            if (interval - end) > 0:
+                time.sleep(interval - end)
     except Exception as e:
         print(e)
         print('traceback:')
