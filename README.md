@@ -16,7 +16,9 @@
     </ul>
     <li>-l - Log file path - Not requied, but output won't be logged if not provided.</li>
   </ul>
-  
+
+Script can be terminated by Ctrl+C
+
 Script was tested with Python version 3.9 and 3.10.
 
 <h4>Example of usage</h4>
