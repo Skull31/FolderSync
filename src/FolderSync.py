@@ -85,8 +85,7 @@ class FolderSync():
             None
 
         Raise:
-            RuntimeError - potentially it can raise RuntimeError, but it should be impossible as it is in non-reachable else condition.
-            SystemError - if executed command on system returned different code than 0.
+            RuntimeError - potentially it can raise RuntimeError, but it should be impossible as it is in non-reachable else condition or if executed command on system returned different code than 0.
         '''
 
         if folderDifferences == None:
@@ -103,7 +102,7 @@ class FolderSync():
                     self.appendLog('Removed file ' + pathToRemove)
                     print('Removed file ' + pathToRemove)
                 else:
-                    raise SystemError('System returned different exit code than 0. Return code was ' + str(result))
+                    raise RuntimeError('System returned different exit code than 0. Return code was ' + str(result))
 
             elif remove['type'] == 'folder':
                 pathToRemove = self.__replicapath + path + remove['path']
@@ -115,7 +114,7 @@ class FolderSync():
                     self.appendLog('Removed folder ' + pathToRemove)
                     print('Removed folder ' + pathToRemove)
                 else:
-                    raise SystemError('System returned different exit code than 0. Return code was ' + str(result))
+                    raise RuntimeError('System returned different exit code than 0. Return code was ' + str(result))
             else:
                 raise RuntimeError('Weird error')
 
@@ -131,7 +130,7 @@ class FolderSync():
                     self.appendLog('Added file ' + replicaCopyPath)
                     print('Added file ' + replicaCopyPath)
                 else:
-                    raise SystemError('System returned different exit code than 0. Return code was ' + str(result))
+                    raise RuntimeError('System returned different exit code than 0. Return code was ' + str(result))
             elif add['type'] == 'folder':
                 sourceCopyPath = self.__sourcePath + path + add['path']
                 replicaCopyPath = self.__replicapath + path + add['path']
@@ -143,7 +142,7 @@ class FolderSync():
                     self.appendLog('Added folder ' + replicaCopyPath)
                     print('Added folder ' + replicaCopyPath)
                 else:
-                    raise SystemError('System returned different exit code than 0. Return code was ' + str(result))
+                    raise RuntimeError('System returned different exit code than 0. Return code was ' + str(result))
             else:
                 raise RuntimeError('Weird error')
 
@@ -158,7 +157,7 @@ class FolderSync():
                 self.appendLog('Copied ' + replicaCopyPath)
                 print('Copied ' + replicaCopyPath)
             else:
-                raise SystemError('System returned different exit code than 0. Return code was ' + str(result))
+                raise RuntimeError('System returned different exit code than 0. Return code was ' + str(result))
 
         for folder in folderDifferences['folders']:
             if self.__linuxTerminal:
