@@ -8,8 +8,8 @@
 
 <p>Script takes 4 input arguments:
   <ul>
-    <li>-s - Source Folder Path - Required</li>
-    <li>-r - Replica Folder Path - Required</li>
+    <li>-s - Source Folder Path - Required - Folder need to exist, otherwise the script will be terminated.</li>
+    <li>-r - Replica Folder Path - Required - Folder need to exist, otherwise the script will be terminated.</li>
     <li>-i - Interval between synchronization - Not required, if not provided default interval will be 1 minute</li>
     <ul>
     <li>Interval needs to be in format integer + h/m/s (hour/minute/second)</li>
