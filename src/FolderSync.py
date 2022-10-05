@@ -427,13 +427,15 @@ def main():
         print('Sync of folders running.')
         print('Source Folder: ' + sourcePath)
         print('Replica Folder: ' + replicaPath)
-        print('Log Path: ' + logPath)
+        if logPath != None:
+            print('Log Path: ' + logPath)
         print('Sync Interval: ' + str(interval))
 
         foldersObj.appendLog('Sync of folders running.')
         foldersObj.appendLog('Source Folder: ' + sourcePath)
         foldersObj.appendLog('Replica Folder: ' + replicaPath)
-        foldersObj.appendLog('Log Path: ' + logPath)
+        if logPath != None:
+            foldersObj.appendLog('Log Path: ' + logPath)
         foldersObj.appendLog('Sync Interval: ' + str(interval))
 
         while True:
