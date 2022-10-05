@@ -71,7 +71,7 @@ class FolderSync():
             if self.__linuxTerminal:
                 result = os.system('echo "' + logtime + ' --- ' + log + '" >> "' + self.__logpath +'"')
             else:
-                result = os.system('echo ' + logtime + ' --- ' + log + ' >> "' + self.__logpath +'"')
+                result = os.system('echo ' + logtime + ' --- ' + log + ' >> \'' + self.__logpath +'\'')
 
     def syncFolders(self, folderDifferences:dict=None, path:str='') -> None:
         '''
