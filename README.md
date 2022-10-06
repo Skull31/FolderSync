@@ -30,6 +30,6 @@ python FolderSync.py -s ~/SourceFolder -r ~/ReplicaFolder -i 1m -l ~/log.log
   <ul>
     <li>Windows - Tested on Windows 11</li>
     <li>Linux - Tested on Rocky Linux 9</li>
-    <li>Potentially also MacOs but <b>Not Tested<b></li>
+    <li>macOs - Tested on macOS Monterey - Version 12.3</li>
   </ul>
 </p>
