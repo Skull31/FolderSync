@@ -455,11 +455,16 @@ def main():
                 print('Next sync in ' + str(interval - end) + ' seconds.')
                 time.sleep(interval - end)
             else:
-                print('Synchronisation took longer than configured interval. Next sync starts immediately.')
+                print('Synchronization took longer than configured interval. Next sync starts immediately.')
+    except KeyboardInterrupt:
+        print('Script terminated by KeyboardInterrupt')
+        foldersObj.appendLog('Script terminated by KeyboardInterrupt')
+        exit(0)
     except Exception as e:
         print(e)
         print('traceback:')
         traceback.print_exc()
+        exit(1)
 
 if __name__ == '__main__':
     main()
