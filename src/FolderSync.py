@@ -451,9 +451,11 @@ def main():
             
             end = time.time() - start
             
-            print('Next sync in ' + str(interval - end) + ' seconds.')
             if (interval - end) > 0:
+                print('Next sync in ' + str(interval - end) + ' seconds.')
                 time.sleep(interval - end)
+            else:
+                print('Synchronisation took longer than configured interval. Next sync starts immediately.')
     except Exception as e:
         print(e)
         print('traceback:')
